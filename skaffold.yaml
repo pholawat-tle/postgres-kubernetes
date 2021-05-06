@@ -15,4 +15,5 @@ build:
 deploy:
   kubectl:
     manifests:
+      - 'postgres-secret.yaml'
       - 'k8s/*'

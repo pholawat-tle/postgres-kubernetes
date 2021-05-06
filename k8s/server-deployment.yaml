@@ -17,3 +17,17 @@ spec:
         image: server-image
         ports:
         - containerPort: 5000
+        env:
+          - name: PGUSER
+            value: postgres
+          - name: PGHOST
+            value: postgres-cluster-ip-service
+          - name: PGPORT
+            value: '5432'
+          - name: PGDATABASE
+            value: postgres
+          - name: PGPASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: pgpassword
+                key: PGPASSWORD
